@@ -1,0 +1,17 @@
+<form action="/hms/accommodations" method="GET"> 
+  <div class="row align-items-center">
+    <div class="col-xs-6 col-md-4 col-md-offset-4 search">
+      <div class="input-group">
+        <input type="text" class="form-control inputsearch" placeholder="Search your stocks here" id="txtSearch" (keyup) = "searchinitiate($event)"/>
+        <div class="input-group-btn">
+          <button class="btn btn-primary" >
+            <span class="glyphicon glyphicon-search "></span>
+          </button>
+        </div>
+      </div>
+        <div *ngFor="let s of searchlist" class="group col-xs-6 col-md-4 col-md-offset-4 searchlist">
+           <a href="#" (click) = "selected(s.id)">{{s.name}}</a>
+</div>
+    </div>
+  </div>
+</form>

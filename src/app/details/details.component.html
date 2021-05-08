@@ -1,0 +1,154 @@
+
+<div class="company-ratios col-md-6 col-md-offset-3" *ngIf="loaddata">
+    <ul id="top-ratios" class="list-group">
+
+
+
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+
+                Market Cap
+
+            </span>
+
+
+
+            <span class="nowrap value">
+
+                ₹
+
+                <span class="number">{{detailsdisplay.MarketCap}}</span>
+
+                Cr.
+
+            </span>
+
+        </li>
+
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+
+                Current Price
+
+            </span>
+
+
+
+            <span class="nowrap value">
+
+                ₹
+
+                <span class="number">{{detailsdisplay.CurrentMarketPrice}}</span>
+
+            </span>
+
+        </li>
+
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+
+                Stock
+
+            </span>
+
+
+
+            <span class="number">{{detailsdisplay.Stock}}</span>
+
+        </li>
+
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+
+                Dividend
+
+            </span>
+
+
+
+            <span class="nowrap value">
+
+                <span class="number">{{detailsdisplay.Dividend}}</span>
+
+            </span>
+
+        </li>
+
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+
+                ROCE
+            </span>
+
+
+
+            <span class="nowrap value">
+
+                ₹
+
+                <span class="number">{{detailsdisplay.ROCE}}</span>
+
+            </span>
+
+        </li>
+
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+
+                ROE
+
+            </span>
+
+
+
+            <span class="nowrap value">
+
+                <span class="number">{{detailsdisplay.ROE}}</span>
+
+                %
+
+            </span>
+
+        </li>
+
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+
+                Dept
+
+            </span>
+
+
+
+            <span class="nowrap value">
+
+                <span class="number">{{detailsdisplay.Debt}}</span>
+
+                %
+
+            </span>
+        </li>
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+                EPS
+            </span>
+            <span class="nowrap value">
+                <span class="number">{{detailsdisplay.EPS}}</span>
+                %
+            </span>
+        </li>
+        <li class="list-group-item" data-source="default">
+            <span class="name">
+                Reserves
+            </span>
+            <span class="nowrap value">
+
+                ₹
+
+                <span class="number">{{detailsdisplay.Reserves}}</span>
+
+            </span>
+
+        </li>
+    </ul>
+</div>
