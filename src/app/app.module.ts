@@ -10,7 +10,10 @@ import { DetailsComponent } from './details/details.component';
 import { SharedDataService } from './shared/share.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './add/add.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -20,15 +23,18 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     FooterComponent,
     DetailsComponent,
-    AddComponent
+    AddComponent,
+    LoginComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [SharedDataService],
+  providers: [SharedDataService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

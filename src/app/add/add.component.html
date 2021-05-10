@@ -1,53 +1,222 @@
 <div class="row">
-<div class="col-md-4 col-md-offset-4" style="margin-top: 50px;">
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" [(ngModel)] = "name">
-    </div>
-    <div class="form-group">
-        <label for="name">shortname:</label>
-        <input type="text" class="form-control" [(ngModel)] = "shortname">
+  <div class="col-md-8 col-md-offset-2" style="margin-top: 50px;">
+    <form action="" [formGroup]="stockform">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" formControlName="name" name="name">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('name').invalid && (stockform.get('name').dirty || stockform.get('name').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('name').errors.required">
+                  Name is required.
+                </span>
+              </span>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="name">Shortname:</label>
+            <input type="text" class="form-control" formControlName="shortname" name="shortname">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('shortname').invalid && (stockform.get('shortname').dirty || stockform.get('shortname').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('shortname').errors.required">
+                  Shortname is required.
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="MarketCap">MarketCap:</label>
+            <input type="text" class="form-control" formControlName="MarketCap" name="marketcap">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('MarketCap').invalid && (stockform.get('MarketCap').dirty || stockform.get('MarketCap').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('MarketCap').errors.required">
+                  MarketCap is required.
+                </span>
+                <span *ngIf="stockform.get('MarketCap').errors.min">
+                  MarketCap min value is 1.
+                </span>
+                <span *ngIf="stockform.get('MarketCap').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="CurrentMarketPrice">CurrentMarketPrice:</label>
+            <input type="text" class="form-control" formControlName="CurrentMarketPrice" name="currentprice">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('CurrentMarketPrice').invalid && (stockform.get('CurrentMarketPrice').dirty || stockform.get('CurrentMarketPrice').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('CurrentMarketPrice').errors.required">
+                  CurrentMarketPrice is required.
+                </span>
+                <span *ngIf="stockform.get('CurrentMarketPrice').errors.min">
+                  CurrentMarketPrice min value is 1.
+                </span>
+                <span *ngIf="stockform.get('CurrentMarketPrice').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Stock">Stock:</label>
+            <input type="text" class="form-control" formControlName="Stock" name="stock">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('Stock').invalid && (stockform.get('Stock').dirty || stockform.get('Stock').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('Stock').errors.required">
+                  Stock is required.
+                </span>
+                <span *ngIf="stockform.get('Stock').errors.min">
+                  Stock min value is 1.
+                </span>
+                <span *ngIf="stockform.get('Stock').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Dividend">Dividend:</label>
+            <input type="text" class="form-control" formControlName="Dividend" name="dividend">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('Dividend').invalid && (stockform.get('Dividend').dirty || stockform.get('Dividend').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('Dividend').errors.required">
+                  Dividend is required.
+                </span>
+                <span *ngIf="stockform.get('Dividend').errors.min">
+                  Dividend min value is 1.
+                </span>
+                <span *ngIf="stockform.get('Dividend').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="ROCE">Roce:</label>
+            <input type="text" class="form-control" formControlName="ROCE" name="ROCE">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('ROCE').invalid && (stockform.get('ROCE').dirty || stockform.get('ROCE').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('ROCE').errors.required">
+                  ROCE is required.
+                </span>
+                <span *ngIf="stockform.get('ROCE').errors.min">
+                  ROCE min value is 1.
+                </span>
+                <span *ngIf="stockform.get('ROCE').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ROE">Roe:</label>
+            <input type="text" class="form-control" formControlName="ROE" name="ROE">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('ROE').invalid && (stockform.get('ROE').dirty || stockform.get('ROE').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('ROE').errors.required">
+                  ROE is required.
+                </span>
+                <span *ngIf="stockform.get('ROE').errors.min">
+                  ROE min value is 1.
+                </span>
+                <span *ngIf="stockform.get('ROE').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Debt">Debt:</label>
+            <input type="text" class="form-control" formControlName="Debt" name="Debt">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('Debt').invalid && (stockform.get('Debt').dirty || stockform.get('Debt').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('Debt').errors.required">
+                  Debt is required.
+                </span>
+                <span *ngIf="stockform.get('Debt').errors.min">
+                  Debt min value is 1.
+                </span>
+                <span *ngIf="stockform.get('Debt').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="EPS">Eps:</label>
+            <input type="text" class="form-control" formControlName="EPS" name="EPS">
+            <div style="height: 10px;">
+              <span *ngIf="stockform.get('EPS').invalid && (stockform.get('EPS').dirty || stockform.get('EPS').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('EPS').errors.required">
+                  EPS is required.
+                </span>
+                <span *ngIf="stockform.get('EPS').errors.min">
+                  EPS min value is 1.
+                </span>
+                <span *ngIf="stockform.get('EPS').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Reserves">Reserves:</label>
+            <input type="text" class="form-control" formControlName="Reserves" name="Reserves">
+            <div style="height: 10px;">
+              <span
+                *ngIf="stockform.get('Reserves').invalid && (stockform.get('Reserves').dirty || stockform.get('Reserves').touched)"
+                class="text-danger">
+                <span *ngIf="stockform.get('Reserves').errors.required">
+                  Reserves is required.
+                </span>
+                <span *ngIf="stockform.get('Reserves').errors.min">
+                  Reserves min value is 1.
+                </span>
+                <span *ngIf="stockform.get('Reserves').errors.max">
+                  Reserves max value is 10.
+                </span>
+                <span *ngIf="stockform.get('Reserves').errors.pattern">
+                  Please type number
+                </span>
+              </span>
+            </div>
+          </div>
+
+        </div>
       </div>
-    
-      <div class="form-group">
-        <label for="MarketCap">MarketCap:</label>
-        <input type="text" class="form-control" [(ngModel)] = "MarketCap" >
+      <div class="row">
+        <div class="col-md-2 col-md-offset-10"><button type="submit" class="btn btn-primary "
+            [disabled]="!stockform.valid" (click)="savedeatils()">Submit</button>
+        </div>
+
       </div>
-      <div class="form-group">
-        <label for="CurrentMarketPrice">CurrentMarketPrice:</label>
-        <input type="text" class="form-control" [(ngModel)] = "CurrentMarketPrice" >
-      </div>
-      <div class="form-group">
-        <label for="Stock">Stock:</label>
-        <input type="text" class="form-control" [(ngModel)]="Stock">
-      </div>
-      <div class="form-group">
-        <label for="Dividend">Dividend:</label>
-        <input type="text" class="form-control" [(ngModel)]="Dividend">
-      </div>
-      <div class="form-group">
-        <label for="ROCE">ROCE:</label>
-        <input type="text" class="form-control" [(ngModel)]="ROCE">
-      </div>
-      <div class="form-group">
-        <label for="ROE">ROE:</label>
-        <input type="text" class="form-control" [(ngModel)]= " ROE">
-      </div>
-      <div class="form-group">
-        <label for="Debt">Debt:</label>
-        <input type="text" class="form-control" [(ngModel)]="Debt">
-      </div>
-      <div class="form-group">
-        <label for="EPS">EPS:</label>
-        <input type="text" class="form-control" [(ngModel)] ="EPS">
-      </div>
-      <div class="form-group">
-        <label for="Reserves">Reserves:</label>
-        <input type="text" class="form-control" [(ngModel)] = "Reserves">
-      </div>
-   
-    <button type="submit" class="btn btn-default" (click)="savedeatils()">Submit</button>
-  </form>
-</div>
+
+    </form>
+  </div>
 </div>

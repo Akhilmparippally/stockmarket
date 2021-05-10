@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
 import {Observable} from 'rxjs';
-import {HttpClient, HttpParams} from '@angular/common/http'
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http'
 @Injectable()
 
 export class SharedDataService {
@@ -37,7 +37,9 @@ export class SharedDataService {
         return this._http.get('/companies/',{params});
     }
     insertstockdetails(data):Observable<any>{
-       // const params = new HttpParams().set('id', id);
-        return this._http.post('/addstock/',data);
+        console.log(data);
+        const body=JSON.stringify(data);
+        const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+        return this._http.post('/addstock/',body,{headers: headers});
     }
 }

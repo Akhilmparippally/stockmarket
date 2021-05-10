@@ -10,6 +10,7 @@ import { debounceTime } from 'rxjs/operators'
 })
 export class SearchComponent implements OnInit {
 searchlist: Search[]; 
+searching
 Updatedsearchlist = []
 dataset
 modelChanged: Subject<object> = new Subject<object>()
@@ -18,7 +19,6 @@ modelChanged: Subject<object> = new Subject<object>()
   //  this.searchlist = [new Search('Tata consultancy Service','TCS', 12),new Search('Infosys','Infy', 12)];
   this.modelChanged.pipe(debounceTime(100)).subscribe(model => {
     this.dataset = model
-    console
     this.searchnow(this.dataset)
 })
   }
@@ -29,11 +29,12 @@ modelChanged: Subject<object> = new Subject<object>()
     let searchkey = event.target.value
     this.modelChanged.next(searchkey)
   }
-  async searchnow(searchkey) {
+  searchnow(searchkey) {
    
     this.searchlist = []
     
     this._SharedDataService.fetchsearchlist(searchkey).then( (data5: Array<any>) => {
+      this.searchlist = []
       data5.map(d=> {
         this.searchlist.push(new Search(d.name,d.shortname,d.id))
       })
@@ -43,6 +44,7 @@ modelChanged: Subject<object> = new Subject<object>()
   }
   selected(id:number) {
     console.log(id);
+    this.searching = ''
     this._SharedDataService.changeCompany(id);
     this.searchlist = [];
   }
