@@ -1,12 +1,13 @@
 const express= require('express');
 const client = require('pg').Client
 
+
 const clientnew = new client({
-    user : "",
-    password: "",
-    host: "",
-    port: "5432",
-    database: "akhil_test_db"
+  user : "beta_gorn",
+  password: "beta1jhd74!23ndhdkvjornQ",
+  host: "db-beta.gornapp.com",
+  port: "5432",
+  database: "akhil_test_db"
 })
 
 clientnew.connect().then(() => {});

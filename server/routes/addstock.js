@@ -3,14 +3,14 @@ const client = require('pg').Client
 const router = express.Router();
 qs = require('querystring');
 
-const clientnew = new client({
-    user : "",
-    password: "",
-    host: "",
-    port: "5432",
-    database: "akhil_test_db"
-})
 
+const clientnew = new client({
+  user : "beta_gorn",
+  password: "beta1jhd74!23ndhdkvjornQ",
+  host: "db-beta.gornapp.com",
+  port: "5432",
+  database: "akhil_test_db"
+})
 clientnew.connect().then(() => console.log("Db connected"));
 //const axios = require('axios');
 router.post('/', (req,resp) => {
