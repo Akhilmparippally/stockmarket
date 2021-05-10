@@ -19,7 +19,7 @@ app.use('/addstock', add);
 app.get('*',(req,res)=> {
     console.log(__dirname);
   // console.log('path',path.join('dist','riafyproject/index.html'));
-   res.sendFile('/dist/riafyproject/index.html');
+   res.sendFile('/app/dist/riafyproject/index.html');
 })
 const port = process.env.PORT || 4600
 
