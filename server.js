@@ -17,7 +17,8 @@ app.use('/companies', companies);
 app.use('/addstock', add);
 
 app.get('*',(req,res)=> {
-    res.sendFile(path.join(__dirname,'build/stockmarketakhil/index.html'))
+    console.log(__dirname);
+    res.sendFile(path.join(__dirname,'dist/index.html'))
 })
 const port = process.env.PORT || 4600
 
