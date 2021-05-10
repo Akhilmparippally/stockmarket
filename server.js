@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/companies', companies);
-app.use('/login',auth);
-//app.use('/addstock', add);
+//app.use('/login',auth);
+app.use('/addstock', add);
 
 app.get('*',(req,res)=> {
     res.sendFile(path.join(__dirname,'dist/inde.html'))
