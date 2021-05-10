@@ -18,7 +18,7 @@ app.use('/addstock', add);
 
 app.get('*',(req,res)=> {
     console.log(__dirname);
-   // res.sendFile(path.join('dist/index.html',{root}))
+   console.log(path.join(__dirname,'dist/index.html'));
    res.sendFile('index.html', { root: __dirname });
 })
 const port = process.env.PORT || 4600
