@@ -4,9 +4,9 @@ const router = express.Router();
 
 
  const clientnew = new client({
-    user : "beta_gorn",
-    password: "beta1jhd74!23ndhdkvjornQ",
-    host: "db-beta.gornapp.com",
+    user : "",
+    password: "",
+    host: "",
     port: "5432",
     database: "akhil_test_db"
 })
