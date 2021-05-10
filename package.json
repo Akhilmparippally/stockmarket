@@ -2,7 +2,6 @@
   "name": "riafyproject",
   "version": "0.0.0",
   "scripts": {
-    
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
@@ -23,6 +22,7 @@
     "@angular/platform-browser": "~11.2.13",
     "@angular/platform-browser-dynamic": "~11.2.13",
     "@angular/router": "~11.2.13",
+    "bootstrap": "^3.4.1",
     "express": "^4.17.1",
     "pg": "^8.6.0",
     "rxjs": "~6.6.0",
