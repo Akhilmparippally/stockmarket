@@ -13,6 +13,7 @@ import { AddComponent } from './add/add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { AuthService } from './auth/auth.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [SharedDataService,AuthService],
+  providers: [{provide:LocationStrategy,useClass: HashLocationStrategy},SharedDataService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

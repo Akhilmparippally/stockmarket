@@ -7,6 +7,7 @@ import { DetailsComponent } from './details/details.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
+  { path: '',   component: SearchComponent},
  { path: 'home',   component: SearchComponent},
  { path: 'add',   component: AddComponent},
  {path: 'login', component: AuthComponent}
