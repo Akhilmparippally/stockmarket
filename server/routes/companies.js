@@ -2,7 +2,7 @@ const  express = require('express');
 const client = require('pg').Client
 const router = express.Router();
 
-const clientnew = new client({
+ const clientnew = new client({
     user : "",
     password: "",
     host: "",
