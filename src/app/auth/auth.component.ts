@@ -19,9 +19,9 @@ export class AuthComponent implements OnInit {
     return
     console.log('Form submitted', authform.value);
     authform.reset();
-    this._authservice.login(authform.value).subscribe(res=>{
+  /*  this._authservice.login(authform.value).subscribe(res=>{
       console.log(res);
-    })
+    }) */
   }
 
 }
