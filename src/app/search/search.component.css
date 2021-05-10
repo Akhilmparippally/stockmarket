@@ -10,3 +10,6 @@
 .check:hover{
     cursor: pointer;
 }
+.check{
+    display: inline-block !important;
+}
