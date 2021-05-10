@@ -11,7 +11,6 @@ import { SharedDataService } from './shared/share.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './add/add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 
@@ -24,7 +23,6 @@ import { AuthService } from './auth/auth.service';
     FooterComponent,
     DetailsComponent,
     AddComponent,
-    LoginComponent,
     AuthComponent
   ],
   imports: [
