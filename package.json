@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "nodemon server.js",
     "build": "ng build --prod --aot",
+    "heroku-prebuild": "echo run before",
+    "heroku-postbuild": "npm install --prefix ./client",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
