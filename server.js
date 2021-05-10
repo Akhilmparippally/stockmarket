@@ -5,7 +5,7 @@ const app = express();
 
 const companies = require('./server/routes/companies');
 const add = require('./server/routes/addstock');
-const auth = require('./server/routes/auth');
+//const auth = require('./server/routes/auth');
 
 
 app.use(express.static(path.join(__dirname,'dist')));
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/companies', companies);
 app.use('/login',auth);
-app.use('/addstock', add);
+//app.use('/addstock', add);
 
 app.get('*',(req,res)=> {
     res.sendFile(path.join(__dirname,'dist/inde.html'))
