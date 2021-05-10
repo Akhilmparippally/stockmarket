@@ -9,13 +9,13 @@ import { details } from './details.model';
 })
 export class DetailsComponent implements OnInit {
   selectedCompany:any;
+  //Using details model
   detailsdisplay : details; 
   loaddata: boolean = false;
   constructor(public _sharedDataService: SharedDataService) { }
 
   ngOnInit(): void {
     this._sharedDataService.currentCompany.subscribe(company =>{
-      
       this.selectedCompany= company
       console.log(this.selectedCompany)
       if(this.selectedCompany && !Array.isArray(this.selectedCompany))
@@ -36,7 +36,7 @@ export class DetailsComponent implements OnInit {
           this.loaddata = true
       });
       
-    } ); //<= Always get current value!
+    } ); 
   }
 
 }
