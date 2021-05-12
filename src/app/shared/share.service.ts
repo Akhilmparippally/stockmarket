@@ -9,6 +9,11 @@ export class SharedDataService {
         private _http: HttpClient
     ) { }
     //Using any
+    public loginDataDetails: any = [];
+   
+    private loginSource = new BehaviorSubject(this.loginDataDetails);
+    userloggedIn = this.loginSource.asObservable();
+
     public editDataDetails: any = [];
     public subject = new Subject<any>();
     private messageSource = new BehaviorSubject(this.editDataDetails);
@@ -16,12 +21,15 @@ export class SharedDataService {
     changeCompany(id: number) {
         this.messageSource.next(id)
     }
+    changeLoginstatus(status: boolean) {
+        this.loginSource.next(status)
+    }
     fetchsearchlist(key) {
         const params = new HttpParams().set('key', key);
         
         let promise = new Promise((resolve, reject) => {
            
-            this._http.get('/companies/',{params})
+            this._http.get('/company/search',{params})
               .toPromise()
               .then(
                 res => { 
@@ -34,12 +42,13 @@ export class SharedDataService {
     }
     fetchsearchlistbyid(id): Observable<any> {
         const params = new HttpParams().set('id', id);
-        return this._http.get('/companies/',{params});
+        return this._http.get('/company/findbyid',{params});
     }
     insertstockdetails(data):Observable<any>{
         console.log(data);
         const body=JSON.stringify(data);
         const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-        return this._http.post('/addstock/',body,{headers: headers});
+        return this._http.post('/company/createcompany',body,{headers: headers});
     }
+
 }

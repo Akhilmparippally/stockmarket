@@ -9,17 +9,25 @@ import { details } from './details.model';
 })
 export class DetailsComponent implements OnInit {
   selectedCompany:any;
+  loading :boolean = false;
   //Using details model
   detailsdisplay : details; 
   loaddata: boolean = false;
   constructor(public _sharedDataService: SharedDataService) { }
 
   ngOnInit(): void {
+    
     this._sharedDataService.currentCompany.subscribe(company =>{
       this.selectedCompany= company
       console.log(this.selectedCompany)
+      if(this.selectedCompany === 0) {
+        this.loaddata = false 
+      }
       if(this.selectedCompany && !Array.isArray(this.selectedCompany))
+      {
+        this.loading = true
       this._sharedDataService.fetchsearchlistbyid(this.selectedCompany).subscribe(data5 => {
+        this.loading = false
         let response = JSON.parse(JSON.stringify(data5))
         this.detailsdisplay = new details(response[0].name,
           response[0].id,
@@ -34,7 +42,7 @@ export class DetailsComponent implements OnInit {
            response[0].EPS,
           response[0].Reserves)
           this.loaddata = true
-      });
+      }); }
       
     } ); 
   }

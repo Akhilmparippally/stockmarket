@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
   constructor(public _SharedDataService: SharedDataService) {
 
     //  this.searchlist = [new Search('Tata consultancy Service','TCS', 12),new Search('Infosys','Infy', 12)];
-    this.modelChanged.pipe(debounceTime(100)).subscribe(model => {
+    this.modelChanged.pipe(debounceTime(200)).subscribe(model => {
       this.dataset = model
       this.searchnow(this.dataset)
     })
@@ -37,6 +37,7 @@ export class SearchComponent implements OnInit {
   searchinitiate(event: any) {
     let searchkey = event.target.value
     this.modelChanged.next(searchkey)
+    this._SharedDataService.changeCompany(0);
   }
   /**
    * @author: Akhil

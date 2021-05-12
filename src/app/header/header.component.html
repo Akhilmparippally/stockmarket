@@ -3,11 +3,17 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Stock Market</a>
       </div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" style="float: left;">
         <li   routerLinkActive="active"><a href="#" routerLink="/home">Home</a></li>
-        <li  routerLinkActive="active"><a href="#" routerLink="/add">Add Stock</a></li>
-        <li  routerLinkActive="active"><a href="#" routerLink="/login">Sign In</a></li>
+        <li  routerLinkActive="active" *ngIf="loginstatus"><a href="#" routerLink="/add">Add Stock</a></li>
+        <li  routerLinkActive="active" *ngIf="!loginstatus"><a href="#" routerLink="/login">Sign In</a></li>
         <!--li><a href="#">Sign Up</a></li-->
       </ul>
-    </div>
+      <ul class="nav navbar-nav " style="float: right;">
+        <li  *ngIf="loginstatus"><a href="#" (click) ="logout()">Logout</a></li>
+      </ul>
+      </div>
+      
+      
+    
   </nav>

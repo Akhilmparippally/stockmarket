@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable({
@@ -9,8 +9,16 @@ export class AuthService{
       
     }
 login(data) {
-    return this.httpclient.post('/login',data);
-
+    const body=JSON.stringify(data);
+    console.log(body);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.httpclient.post('/user/signin',body,{headers: headers});
+}
+register(data) {
+    const body=JSON.stringify(data);
+    console.log(body);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.httpclient.post('/user/signup',body,{headers: headers});
 }
 
 }
