@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-module.exports= new Sequelize('akhil_test_db', 'beta_gorn', 'beta1jhd74!23ndhdkvjornQ', {
-  host: 'db-beta.gornapp.com',
+module.exports= new Sequelize('akhil_test_db', '', '', {
+  host: '',
   dialect: 'postgres',
 
   pool: {
